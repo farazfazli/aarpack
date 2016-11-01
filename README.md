@@ -7,3 +7,5 @@ AAR pack lets you easily transport dependencies. No more having to upload to Mav
 # From your Android Project root
 curl https://raw.githubusercontent.com/farazfazli/aarpack/master/aarpack.sh | sh
 ```
+
+Powered by [mixtape.moe](https://mixtape.moe/).
