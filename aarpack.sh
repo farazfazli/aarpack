@@ -10,12 +10,12 @@ echo "Zipping files...${yellow}"
 zip -q pack.zip *.aar
 echo "Uploading...${cyan}"
 # Adapted from mixtape.moe basic uploader, removed jshon dep
-DEST="https://mixtape.moe/upload.php?output=gyazo"
+DEST="https://mixtape.moe/upload.php"
 FILE="pack.zip"
 CMD=$(basename "$0")
 OUT=$(curl -sf -F files[]="@${FILE}" "${DEST}")
 if [[ $(echo "$OUT") =~ true ]]; then
-                echo $(echo "$OUT")
+                echo $(echo "$OUT" | python -mjson.tool | grep url | tr -d '"' | tr -d " " | cut -c 5-)
 else
                 echo "An error occurred!"
                 exit 1
