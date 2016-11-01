@@ -10,7 +10,7 @@ echo "Zipping files...${yellow}"
 zip -q pack.zip *.aar
 echo "Uploading...${cyan}"
 # Adapted from mixtape.moe basic uploader, removed jshon dep
-DEST="https://mixtape.moe/upload.php?output=text"
+DEST="https://mixtape.moe/upload.php?output=gyazo"
 FILE="pack.zip"
 CMD=$(basename "$0")
 OUT=$(curl -sf -F files[]="@${FILE}" "${DEST}")
